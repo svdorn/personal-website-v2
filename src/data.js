@@ -82,6 +82,20 @@ export const publications = [
   },
   {
     year: 2026,
+    name: "An Analysis Graph for Statistical Genetics Agents",
+    link: "https://openreview.net/forum?id=kvUbdWiVk3",
+    authors:
+      "**S Dorn***, J Mohoney*, T Kraska, S Madden, N Zaitlen, M Hujoel",
+    journal:
+      "VLDB 2026 Workshop on Biomedical Data Management Systems (BioDMS)",
+    workshop: "https://biodms.org/",
+    software: {
+      name: "statgen-skills",
+      link: "https://github.com/svdorn/statgen-skills",
+    },
+  },
+  {
+    year: 2026,
     name: "Causal effect heterogeneity estimation using summary statistics",
     link: "https://doi.org/10.21203/rs.3.rs-8589460/v1",
     authors:

@@ -71,6 +71,16 @@ export default function Publications() {
                           Journal
                         </a>
                       )}
+                      {pub.workshop && (
+                        <a
+                          className="chip chip--accent"
+                          href={pub.workshop}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Workshop
+                        </a>
+                      )}
                       {pub.preprint && (
                         <a
                           className="chip"
