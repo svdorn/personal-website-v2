@@ -39,17 +39,17 @@ export const research = [
   {
     name: "Somatic Repeat Instability",
     description:
-      "Mapping how tandem repeats change length in somatic tissue, and the germline variants that modify them",
+      "Quantifying somatic expansion and contraction at short tandem repeats, and mapping their germline modifiers",
   },
   {
     name: "Applied AI in Statistical Genetics",
     description:
-      "Using language models to interpret variant function, and agents to make the resulting analyses reproducible",
+      "Adapting genomic language models for variant effect prediction, and LLM agents for reproducible post-GWAS analysis",
   },
   {
     name: "Statistical Genetics Methods",
     description:
-      "Developing methods for polygenic prediction, genetic confounding, and causal inference from GWAS data",
+      "Developing methods for polygenic prediction, control of genetic confounding, and causal inference from GWAS summary statistics",
   },
 ];
 
