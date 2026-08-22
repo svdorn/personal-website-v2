@@ -37,23 +37,35 @@ export const social = [
 
 export const research = [
   {
-    name: "Impact of Genomic Variation on Function",
+    name: "Somatic Repeat Instability",
     description:
-      "Integrating molecular phenotypes with GWAS to identify important genes and pathways for human disease",
+      "Characterizing how short tandem repeats expand and contract in somatic tissue across population biobanks, and mapping the inherited modifiers — largely in mismatch-repair genes — that tune the direction and rate of repeat length change",
   },
   {
-    name: "Neurological Disease",
+    name: "Applied AI in Statistical Genetics",
     description:
-      "Applying statistical genetics approaches to study neurological disease and the role of Tandem Repeats in neurological disease",
+      "Using genomic language models to resolve the functional and clinical consequences of variants, and building graph-backed agents that make post-GWAS workflows reviewable and reproducible",
   },
   {
-    name: "Genetic Risk Prediction",
+    name: "Statistical Methods",
     description:
-      "Predicting disease risk using genetic information through development of Polygenic Risk Score (PRS) methodology",
+      "Developing methods that operate on GWAS summary statistics — polygenic risk prediction, control of genetic confounding, and causal inference at population scale",
   },
 ];
 
 export const software = [
+  {
+    name: "statgen-skills",
+    link: "https://github.com/svdorn/statgen-skills",
+    description:
+      "A skill library and graph-backed agent for running reviewable, reproducible post-GWAS analyses",
+  },
+  {
+    name: "PUMAS",
+    link: "https://github.com/qlu-lab/PUMAS",
+    description:
+      "A tool for polygenic risk score model fine-tuning and ensemble learning using GWAS summary statistics",
+  },
   {
     name: "GSUB",
     link: "https://github.com/qlu-lab/GSUB",
@@ -64,12 +76,6 @@ export const software = [
     link: "https://github.com/qlu-lab/PENGUIN",
     description:
       "Controlling for polygenic genetic confounding in epidemiologic association analysis",
-  },
-  {
-    name: "PUMAS",
-    link: "https://github.com/qlu-lab/PUMAS",
-    description:
-      "A tool for polygenic risk score model fine-tuning and ensemble learning using GWAS summary statistics",
   },
 ];
 

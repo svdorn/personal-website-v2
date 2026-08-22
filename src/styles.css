@@ -459,6 +459,16 @@ img {
   gap: 1.25rem;
 }
 
+/* Fixed 2x2 for the four software cards, rather than a single wide row. */
+.cards--duo {
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 44rem) {
+  .cards--duo {
+    grid-template-columns: 1fr;
+  }
+}
+
 .card {
   position: relative;
   display: flex;

@@ -6,7 +6,7 @@ export default function Software() {
     <section className="section" id="software">
       <div className="shell">
         <SectionHead eyebrow="Open source" title="Software" />
-        <div className="cards">
+        <div className="cards cards--duo">
           {software.map((tool) => (
             <a
               key={tool.name}
