@@ -49,7 +49,7 @@ export default function Hero() {
               </a>
             </span>
           ))}
-          . {profile.statement}
+          .
         </p>
 
         <Social />

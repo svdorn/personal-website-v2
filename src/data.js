@@ -15,8 +15,6 @@ export const profile = {
     },
     { name: "Margaux Hujoel", href: "https://mhujoel.github.io/" },
   ],
-  statement:
-    "I build statistical and computational methods to uncover how genetic variation shapes human disease and complex traits.",
 };
 
 export const social = [
@@ -49,7 +47,7 @@ export const research = [
   {
     name: "Statistical Genetics Methods",
     description:
-      "Developing methods for polygenic risk prediction and dissecting the genetic architecture of complex traits and disease",
+      "Developing methods for polygenic risk prediction and dissecting the genetic architecture of complex traits",
   },
 ];
 
