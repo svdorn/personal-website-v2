@@ -9,7 +9,7 @@ export const profile = {
   photo: "/images/people/scholar-photo.jpg",
   email: "stephendorn@g.ucla.edu",
   statement:
-    "I develop statistical methods for human genetics, from genome instability to disease risk prediction.",
+    "I develop statistical and computational methods for analyzing large-scale human genetic data.",
   advisors: [
     {
       name: "Noah Zaitlen",
