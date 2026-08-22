@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-package-lock.json
+# package-lock.json is committed so builds are reproducible
 
 # testing
 /coverage
@@ -22,3 +22,6 @@ package-lock.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# vite
+dist

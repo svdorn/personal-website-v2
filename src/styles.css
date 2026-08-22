@@ -1,0 +1,781 @@
+/* ============================================================
+   Design tokens
+   Light is the base; dark overrides only the palette.
+   ============================================================ */
+
+:root {
+  /* Palette — warm paper, ink, navy, one ochre accent */
+  --bg: #fbfaf8;
+  --bg-raised: #ffffff;
+  --bg-sunken: #f3f1ec;
+  --text: #16191d;
+  --text-muted: #59636f;
+  --text-faint: #8a939e;
+  --brand: #2f5c8f;
+  --brand-soft: #4a6fa5;
+  --brand-wash: #e9f0f8;
+  --accent: #a3672c;
+  --accent-wash: #f7efe3;
+  --rule: #e3dfd8;
+  --rule-strong: #cfc9bf;
+  --shadow: 0 1px 2px rgba(22, 25, 29, 0.04), 0 8px 24px rgba(22, 25, 29, 0.06);
+  --shadow-lift: 0 2px 4px rgba(22, 25, 29, 0.05),
+    0 16px 40px rgba(22, 25, 29, 0.1);
+
+  /* Type */
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", sans-serif;
+  --serif: "Newsreader", Charter, "Iowan Old Style", Georgia, serif;
+
+  /* Space */
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+  --measure: 46rem;
+  --wide: 68rem;
+
+  --radius: 10px;
+  --radius-lg: 16px;
+}
+
+/* Dark mode: system preference, unless the user forced light via the toggle. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1319;
+    --bg-raised: #161b23;
+    --bg-sunken: #0a0d12;
+    --text: #e7eaee;
+    --text-muted: #9aa5b3;
+    --text-faint: #6b7683;
+    --brand: #82abdd;
+    --brand-soft: #a4c4e8;
+    --brand-wash: #17222f;
+    --accent: #d59a5f;
+    --accent-wash: #241c12;
+    --rule: #252c36;
+    --rule-strong: #37404d;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.36);
+    --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.45), 0 16px 40px rgba(0, 0, 0, 0.5);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f1319;
+  --bg-raised: #161b23;
+  --bg-sunken: #0a0d12;
+  --text: #e7eaee;
+  --text-muted: #9aa5b3;
+  --text-faint: #6b7683;
+  --brand: #82abdd;
+  --brand-soft: #a4c4e8;
+  --brand-wash: #17222f;
+  --accent: #d59a5f;
+  --accent-wash: #241c12;
+  --rule: #252c36;
+  --rule-strong: #37404d;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.36);
+  --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.45), 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.shell {
+  width: min(100% - 2 * var(--gutter), var(--wide));
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--brand);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  z-index: 100;
+  border-radius: 0 0 var(--radius) 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.header[data-scrolled="true"] {
+  border-bottom-color: var(--rule);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 4.25rem;
+}
+
+.header__mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+/* dna.svg is a white-filled mark (drawn for the old navy hero),
+   so it needs inverting on light backgrounds. */
+.header__mark img {
+  height: 26px;
+  width: 26px;
+  filter: invert(1);
+  opacity: 0.72;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .header__mark img {
+    filter: none;
+    opacity: 0.85;
+  }
+}
+:root[data-theme="dark"] .header__mark img {
+  filter: none;
+  opacity: 0.85;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.header__link {
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.header__link:hover {
+  color: var(--text);
+  background: var(--bg-sunken);
+}
+
+@media (max-width: 40rem) {
+  .header__link {
+    display: none;
+  }
+}
+
+/* Theme toggle */
+.toggle {
+  margin-left: 0.4rem;
+  height: 2rem;
+  width: 2rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--bg-raised);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toggle:hover {
+  color: var(--text);
+  border-color: var(--rule-strong);
+}
+.toggle svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ============================================================
+   Section furniture
+   ============================================================ */
+
+.section {
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+  scroll-margin-top: 4.5rem;
+}
+.section--sunken {
+  background: var(--bg-sunken);
+  border-block: 1px solid var(--rule);
+}
+
+.section__head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.section__eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.section__title {
+  font-size: clamp(1.6rem, 3.4vw, 2.1rem);
+}
+.section__rule {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+
+.hero {
+  padding-block: clamp(3rem, 9vw, 6.5rem) clamp(2.5rem, 6vw, 4rem);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft wash behind the hero, fading out downward. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      120% 90% at 12% -10%,
+      var(--brand-wash) 0%,
+      transparent 62%
+    ),
+    radial-gradient(90% 70% at 92% 0%, var(--accent-wash) 0%, transparent 58%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__id {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 1.6rem);
+  margin-bottom: 1.75rem;
+}
+
+.hero__photo {
+  flex: none;
+  width: 116px;
+  height: 116px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 3px solid var(--bg-raised);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 30rem) {
+  .hero__photo {
+    width: 84px;
+    height: 84px;
+  }
+}
+
+.hero__eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.hero__eyebrow a {
+  color: var(--brand);
+  border-bottom: 1px solid transparent;
+}
+.hero__eyebrow a:hover {
+  border-bottom-color: currentColor;
+}
+.hero__dot {
+  color: var(--rule-strong);
+}
+
+.hero__name {
+  font-size: clamp(2.5rem, 8vw, 4.25rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.hero__lede {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2.6vw, 1.45rem);
+  line-height: 1.5;
+  color: var(--text-muted);
+  max-width: var(--measure);
+  margin: 0 0 2rem;
+  text-wrap: pretty;
+}
+.hero__lede a {
+  color: var(--text);
+  border-bottom: 1px solid var(--brand);
+}
+.hero__lede a:hover {
+  color: var(--brand);
+}
+
+/* ============================================================
+   Social row
+   ============================================================ */
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.social__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.85rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--bg-raised);
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.social__link:hover {
+  color: var(--text);
+  border-color: var(--brand);
+  transform: translateY(-1px);
+}
+.social__link img {
+  height: 15px;
+  width: 15px;
+  opacity: 0.65;
+}
+.social__link:hover img {
+  opacity: 1;
+}
+
+/* Social icons are dark-on-transparent SVGs; lift them in dark mode. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .social__link img {
+    filter: invert(1) brightness(1.4);
+  }
+}
+:root[data-theme="dark"] .social__link img {
+  filter: invert(1) brightness(1.4);
+}
+
+/* ============================================================
+   Research cards
+   ============================================================ */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.6rem 1.5rem 1.75rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+/* Accent rule that sweeps in on hover. */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--brand);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.25s ease;
+}
+
+.card--link:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--rule-strong);
+}
+.card--link:hover::after {
+  transform: scaleY(1);
+}
+
+.card__index {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.card__title {
+  font-size: 1.2rem;
+  color: var(--text);
+}
+.card--link .card__title {
+  color: var(--brand);
+}
+
+.card__body {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.card__cta {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.15s ease, gap 0.15s ease;
+}
+.card--link:hover .card__cta {
+  color: var(--brand);
+  gap: 0.6rem;
+}
+
+.card__name-mono {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--brand);
+}
+
+/* ============================================================
+   Publications
+   ============================================================ */
+
+.pubs {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.pubyear {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 44rem) {
+  .pubyear {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.pubyear__label {
+  position: sticky;
+  top: 5.5rem;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+@media (max-width: 44rem) {
+  .pubyear__label {
+    position: static;
+    font-size: 0.75rem;
+    font-family: var(--sans);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+  }
+}
+
+.pubyear__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  border-left: 1px solid var(--rule);
+  padding-left: 1.75rem;
+}
+
+@media (max-width: 44rem) {
+  .pubyear__list {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+.pub {
+  position: relative;
+}
+
+/* Marker dot on the rail; filled ochre for headline venues. */
+.pub::before {
+  content: "";
+  position: absolute;
+  left: -1.75rem;
+  top: 0.6rem;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1.5px solid var(--rule-strong);
+}
+.pub--featured::before {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+@media (max-width: 44rem) {
+  .pub::before {
+    display: none;
+  }
+}
+
+.pub__title {
+  font-size: 1.16rem;
+  line-height: 1.35;
+  margin-bottom: 0.4rem;
+}
+.pub__title a {
+  color: var(--text);
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.pub__title a:hover {
+  color: var(--brand);
+  border-bottom-color: var(--brand);
+}
+
+.pub__authors {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 0.3rem;
+  text-wrap: pretty;
+}
+.pub__authors b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.pub__venue {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  margin-bottom: 0.7rem;
+}
+.pub--featured .pub__venue {
+  color: var(--accent);
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 1px solid var(--rule);
+  color: var(--text-muted);
+  background: var(--bg-raised);
+  transition: color 0.15s ease, border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+.chip:hover {
+  color: var(--brand);
+  border-color: var(--brand);
+  background: var(--brand-wash);
+}
+.chip--solid {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+.chip--solid:hover {
+  background: var(--brand-soft);
+  border-color: var(--brand-soft);
+  color: #fff;
+}
+.chip--code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-size: 0.72rem;
+}
+
+.pubs__note {
+  font-size: 0.84rem;
+  color: var(--text-faint);
+  margin: 2.5rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+}
+
+/* ============================================================
+   Contact
+   ============================================================ */
+
+.contact {
+  text-align: center;
+}
+.contact__title {
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  margin-bottom: 0.75rem;
+}
+.contact__body {
+  color: var(--text-muted);
+  max-width: 34rem;
+  margin: 0 auto 1.75rem;
+  text-wrap: pretty;
+}
+.contact__email {
+  display: inline-block;
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 3.5vw, 1.6rem);
+  color: var(--brand);
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: 0.15rem;
+  transition: border-color 0.15s ease;
+  word-break: break-word;
+}
+.contact__email:hover {
+  border-bottom-color: var(--brand);
+}
+.contact__social {
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+.footer {
+  border-top: 1px solid var(--rule);
+  padding-block: 2rem;
+  font-size: 0.84rem;
+  color: var(--text-faint);
+}
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.footer a {
+  color: var(--text-muted);
+}
+.footer a:hover {
+  color: var(--brand);
+}
