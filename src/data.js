@@ -8,13 +8,18 @@ export const profile = {
   affiliationLink: "https://compmed.ucla.edu/",
   photo: "/images/people/scholar-photo.jpg",
   email: "stephendorn@g.ucla.edu",
-  intro:
-    "I am a PhD student at UCLA in the Computational Medicine Department, where I build statistical methods for human genetics — and apply them to understand how genetic variation shapes disease.",
+  advisors: [
+    {
+      name: "Noah Zaitlen",
+      href: "https://compmed.ucla.edu/profile/zaitlen-noah",
+    },
+    { name: "Margaux Hujoel", href: "https://mhujoel.github.io/" },
+  ],
+  statement:
+    "I build statistical and computational methods to uncover how genetic variation shapes human disease and complex traits.",
 };
 
 export const social = [
-  { name: "twitter", label: "X / Twitter", href: "https://x.com/stphn_drn" },
-  { name: "github", label: "GitHub", href: "https://github.com/svdorn" },
   {
     name: "googlescholar",
     label: "Google Scholar",
@@ -25,6 +30,8 @@ export const social = [
     label: "CV",
     href: "https://drive.google.com/file/d/1ScfRk0WPFAfNrYYp9gYyvyTOc4IO4erU/view?usp=sharing",
   },
+  { name: "github", label: "GitHub", href: "https://github.com/svdorn" },
+  { name: "twitter", label: "X", href: "https://x.com/stphn_drn" },
   { name: "email", label: "Email", href: "mailto:stephendorn@g.ucla.edu" },
 ];
 
@@ -69,6 +76,12 @@ export const software = [
 export const publications = [
   {
     year: 2026,
+    name: "Shared modifiers of somatic repeat expansion and contraction act in opposite directions",
+    authors: "**S Dorn**, E Oliver, M Hujoel",
+    journal: "Submitted",
+  },
+  {
+    year: 2026,
     name: "Causal effect heterogeneity estimation using summary statistics",
     link: "https://doi.org/10.21203/rs.3.rs-8589460/v1",
     authors:
@@ -110,7 +123,6 @@ export const publications = [
     link: "https://www.pnas.org/doi/10.1073/pnas.2408715121",
     authors: "Z Zhao, X Yang, **S Dorn**, J Miao, SH Barcellos, JM Fletcher, Q Lu",
     journal: "Proceedings of the National Academy of Sciences (PNAS)",
-    featured: true,
     published_journal: "https://www.pnas.org/doi/10.1073/pnas.2408715121",
     preprint: "https://www.biorxiv.org/content/10.1101/2024.02.12.579913v1",
     software: { name: "PENGUIN", link: "https://github.com/qlu-lab/PENGUIN" },
@@ -122,7 +134,6 @@ export const publications = [
     authors:
       "Y Wu*, Z Sun*, Q Zheng, J Miao, **S Dorn**, S Mukherjee, JM Fletcher, Q Lu",
     journal: "Nature Genetics",
-    featured: true,
     published_journal: "https://www.nature.com/articles/s41588-024-01963-9",
     preprint: "https://www.biorxiv.org/content/10.1101/2023.10.13.562272v1",
     software: { name: "GSUB", link: "https://github.com/qlu-lab/GSUB" },

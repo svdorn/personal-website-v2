@@ -40,8 +40,16 @@ export default function Hero() {
           >
             Computational Medicine Department
           </a>
-          , where I build statistical methods for human genetics — and apply them
-          to understand how genetic variation shapes disease.
+          , working with{" "}
+          {profile.advisors.map((advisor, i) => (
+            <span key={advisor.href}>
+              {i > 0 && " and "}
+              <a href={advisor.href} target="_blank" rel="noopener noreferrer">
+                {advisor.name}
+              </a>
+            </span>
+          ))}
+          . {profile.statement}
         </p>
 
         <Social />

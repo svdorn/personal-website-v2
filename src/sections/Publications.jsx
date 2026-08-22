@@ -39,16 +39,24 @@ export default function Publications() {
                 {group.items.map((pub) => (
                   <article
                     key={pub.name}
-                    className={`pub${pub.featured ? " pub--featured" : ""}`}
+                    // Anything that made it into a journal gets the
+                    // headline-venue treatment.
+                    className={`pub${
+                      pub.published_journal ? " pub--featured" : ""
+                    }`}
                   >
                     <h3 className="pub__title">
-                      <a
-                        href={pub.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {pub.name}
-                      </a>
+                      {pub.link ? (
+                        <a
+                          href={pub.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {pub.name}
+                        </a>
+                      ) : (
+                        pub.name
+                      )}
                     </h3>
                     <Authors value={pub.authors} />
                     <div className="pub__venue">{pub.journal}</div>
