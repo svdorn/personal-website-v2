@@ -44,12 +44,12 @@ export const research = [
   {
     name: "Applied AI in Statistical Genetics",
     description:
-      "Adapting genomic language models for variant effect prediction, and LLM agents for reproducible post-GWAS analysis",
+      "Applying genomic language models to variant effect prediction, and LLM agents to reproducible post-GWAS analysis",
   },
   {
     name: "Statistical Genetics Methods",
     description:
-      "Developing methods for polygenic prediction, control of genetic confounding, and causal inference from GWAS summary statistics",
+      "Developing methods for polygenic prediction and for dissecting the genetic architecture of complex traits and disease",
   },
 ];
 
