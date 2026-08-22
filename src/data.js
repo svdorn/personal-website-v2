@@ -49,7 +49,7 @@ export const research = [
   {
     name: "Statistical Genetics Methods",
     description:
-      "Developing methods for polygenic prediction and for dissecting the genetic architecture of complex traits and disease",
+      "Developing methods for polygenic risk prediction and dissecting the genetic architecture of complex traits and disease",
   },
 ];
 
