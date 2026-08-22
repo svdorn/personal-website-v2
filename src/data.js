@@ -8,6 +8,8 @@ export const profile = {
   affiliationLink: "https://compmed.ucla.edu/",
   photo: "/images/people/scholar-photo.jpg",
   email: "stephendorn@g.ucla.edu",
+  statement:
+    "I develop statistical and machine learning methods for human genetics.",
   advisors: [
     {
       name: "Noah Zaitlen",
