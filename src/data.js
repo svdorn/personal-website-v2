@@ -44,12 +44,12 @@ export const research = [
   {
     name: "Somatic Mutations",
     description:
-      "How mutations accumulate in tissues and tumors, from repeat instability to cancer drivers",
+      "Characterizing somatic mutation across tissues and tumors, from repeat instability to cancer drivers",
   },
   {
     name: "AI for Genomics",
     description:
-      "Genomic language models for variant interpretation and LLM agents for reproducible genomic analysis",
+      "Using genomic language models to interpret genetic variation and LLM agents to enable reproducible genomic analyses",
   },
 ];
 
