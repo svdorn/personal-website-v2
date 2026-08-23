@@ -44,7 +44,7 @@ export const research = [
   {
     name: "Somatic Mutations",
     description:
-      "How mutations accumulate in somatic tissues and tumors, from tandem repeat instability to the drivers of cancer outcomes",
+      "How mutations accumulate in tissues and tumors, from repeat instability to cancer drivers",
   },
   {
     name: "AI for Genomics",
