@@ -42,9 +42,9 @@ export const research = [
       "Quantifying somatic expansion and contraction at short tandem repeats, and mapping their germline modifiers",
   },
   {
-    name: "AI in Statistical Genetics",
+    name: "AI in Genomics",
     description:
-      "Applying genomic language models to variant effect prediction, and LLM agents to reproducible post-GWAS analysis",
+      "Using genomic language models to interpret genetic variation and LLM agents to enable reproducible genomic analyses",
   },
   {
     name: "Statistical Genetics Methods",
