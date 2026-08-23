@@ -752,13 +752,7 @@ img {
 }
 .contact__title {
   font-size: clamp(1.9rem, 5vw, 2.6rem);
-  margin-bottom: 0.75rem;
-}
-.contact__body {
-  color: var(--text-muted);
-  max-width: 34rem;
-  margin: 0 auto 1.75rem;
-  text-wrap: pretty;
+  margin-bottom: 1.5rem;
 }
 .contact__email {
   display: inline-block;
