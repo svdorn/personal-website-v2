@@ -39,7 +39,7 @@ export const research = [
   {
     name: "Short Tandem Repeats",
     description:
-      "Developing methods that measure germline and somatic repeat instability in population-scale sequencing, and link rare expansions to health",
+      "Developing methods that measure germline and somatic repeat instability in population-scale sequencing",
   },
   {
     name: "Somatic Mutations",
