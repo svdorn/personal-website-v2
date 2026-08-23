@@ -37,19 +37,19 @@ export const social = [
 
 export const research = [
   {
-    name: "Somatic Repeat Instability",
+    name: "Short Tandem Repeats",
     description:
-      "Quantifying somatic expansion and contraction at short tandem repeats, and mapping their germline modifiers",
+      "Developing methods that measure germline and somatic repeat instability in population-scale sequencing, and link rare expansions to health",
+  },
+  {
+    name: "Somatic Mutations",
+    description:
+      "How mutations accumulate in somatic tissues and tumors, from tandem repeat instability to the drivers of cancer outcomes",
   },
   {
     name: "AI for Genomics",
     description:
-      "Using genomic language models to interpret genetic variation and LLM agents to enable reproducible genomic analyses",
-  },
-  {
-    name: "Statistical Genetics Methods",
-    description:
-      "Developing methods for polygenic risk prediction and dissecting the genetic architecture of complex traits",
+      "Genomic language models for variant interpretation and LLM agents for reproducible genomic analysis",
   },
 ];
 
