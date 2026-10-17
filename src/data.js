@@ -82,6 +82,15 @@ export const software = [
 export const publications = [
   {
     year: 2026,
+    name: "Regularized ensemble polygenic risk prediction with GWAS summary statistics",
+    link: "https://doi.org/10.1101/2024.11.27.625748",
+    authors: "Z Zhao*, **S Dorn***, Y Wu, X Yang, A Beckerman, J Jin, Q Lu",
+    journal: "Nature Genetics, in press",
+    preprint: "https://doi.org/10.1101/2024.11.27.625748",
+    software: { name: "PUMAS", link: "https://github.com/qlu-lab/PUMAS" },
+  },
+  {
+    year: 2026,
     name: "Shared modifiers of somatic repeat expansion and contraction act in opposite directions",
     authors: "**S Dorn**, E Oliver, M Hujoel",
     journal: "Submitted",
@@ -110,6 +119,15 @@ export const publications = [
     preprint: "https://doi.org/10.21203/rs.3.rs-8589460/v1",
   },
   {
+    year: 2026,
+    name: "Random genetic variation links personality to earnings and wealth",
+    link: "https://arxiv.org/abs/2610.06088",
+    authors:
+      "L Carvalho, S van Alten, SH Barcellos, **S Dorn**, T Galama, C Hartman, Q Lu, D Muslimova",
+    journal: "Submitted — preprint on arXiv",
+    preprint: "https://arxiv.org/abs/2610.06088",
+  },
+  {
     year: 2025,
     name: "Genetic basis of partner choice",
     link: "https://doi.org/10.1101/2025.02.03.636375",
@@ -117,15 +135,6 @@ export const publications = [
       "Q Zheng*, S van Alten*, T Lyngstad*, E Ciscato*, Z Sun, J Miao, Y Wu, **S Dorn**, B Zheng, A Havdahl, E Corfield, M Nivard, T Galama, P Turley, P Chiappori, JM Fletcher, Q Lu",
     journal: "Submitted — preprint on bioRxiv",
     preprint: "https://doi.org/10.1101/2025.02.03.636375",
-  },
-  {
-    year: 2025,
-    name: "One score to rule them all: regularized ensemble polygenic risk prediction with GWAS summary statistics",
-    link: "https://doi.org/10.1101/2024.11.27.625748",
-    authors: "Z Zhao*, **S Dorn***, Y Wu, X Yang, J Jin, Q Lu",
-    journal: "Submitted — preprint on bioRxiv",
-    preprint: "https://doi.org/10.1101/2024.11.27.625748",
-    software: { name: "PUMAS", link: "https://github.com/qlu-lab/PUMAS" },
   },
   {
     year: 2025,
