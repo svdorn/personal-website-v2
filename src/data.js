@@ -91,12 +91,6 @@ export const publications = [
   },
   {
     year: 2026,
-    name: "Shared modifiers of somatic repeat expansion and contraction act in opposite directions",
-    authors: "**S Dorn**, E Oliver, M Hujoel",
-    journal: "Submitted",
-  },
-  {
-    year: 2026,
     name: "An Analysis Graph for Statistical Genetics Agents",
     link: "https://openreview.net/forum?id=kvUbdWiVk3",
     authors:
