@@ -83,9 +83,10 @@ export const publications = [
   {
     year: 2026,
     name: "Regularized ensemble polygenic risk prediction with GWAS summary statistics",
-    link: "https://doi.org/10.1101/2024.11.27.625748",
+    link: "https://doi.org/10.1038/s41588-026-02844-z",
     authors: "Z Zhao*, **S Dorn***, Y Wu, X Yang, A Beckerman, J Jin, Q Lu",
-    journal: "Nature Genetics, in press",
+    journal: "Nature Genetics",
+    published_journal: "https://doi.org/10.1038/s41588-026-02844-z",
     preprint: "https://doi.org/10.1101/2024.11.27.625748",
     software: { name: "PUMAS", link: "https://github.com/qlu-lab/PUMAS" },
   },
