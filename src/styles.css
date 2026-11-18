@@ -738,6 +738,8 @@ img {
   width: 0.85rem;
   height: 0.85rem;
   flex: none;
+  /* Let the pointer fall through to the link so the hand cursor stays. */
+  pointer-events: none;
 }
 
 .pubs__note {
