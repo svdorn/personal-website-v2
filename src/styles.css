@@ -430,23 +430,11 @@ img {
   border-color: var(--brand);
   transform: translateY(-1px);
 }
-.social__link img {
-  height: 15px;
+.social__icon {
   width: 15px;
-  opacity: 0.65;
-}
-.social__link:hover img {
-  opacity: 1;
-}
-
-/* Social icons are dark-on-transparent SVGs; lift them in dark mode. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .social__link img {
-    filter: invert(1) brightness(1.4);
-  }
-}
-:root[data-theme="dark"] .social__link img {
-  filter: invert(1) brightness(1.4);
+  height: 15px;
+  flex: none;
+  pointer-events: none;
 }
 
 /* ============================================================
