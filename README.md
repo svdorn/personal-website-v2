@@ -30,7 +30,7 @@ To add a publication, append an entry to the `publications` array:
   journal: "Nature Genetics",
   featured: true,                             // marks headline venues
   published_journal: "https://…",             // adds a "Journal" chip
-  preprint: "https://…",                      // adds a "Preprint" chip
+  preprint: "https://…",                      // "Preprint" chip, hidden once published_journal is set
   software: { name: "TOOL", link: "https://github.com/…" },
 }
 ```

@@ -734,6 +734,11 @@ img {
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
   font-size: 0.72rem;
 }
+.chip__icon {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex: none;
+}
 
 .pubs__note {
   font-size: 0.84rem;
